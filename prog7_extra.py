@@ -104,6 +104,7 @@ def accuracy(pred, label):
 
 def init_variables(filter_size1 = FILTER_SIZE_1, filter_depth1 = FILTER_DEPTH_1, 
 				   filter_size2 = FILTER_SIZE_2, filter_depth2 = FILTER_DEPTH_2,
+				   filter_size3 = FILTER_SIZE_3, filter_depth3 = FILTER_DEPTH_3,
 				   filter_size41 = FILTER_SIZE_41, filter_depth41 = FILTER_DEPTH_41, 
 				   filter_size42 = FILTER_SIZE_42, filter_depth42 = FILTER_DEPTH_42,
 				   num_hidden = HIDDEN_CELLS,
@@ -157,7 +158,7 @@ def model_cnn(data, variables):
 	layer42_pool = tf.nn.max_pool(layer42_actv, [1, 2, 2, 1], [1, 2, 2, 1], padding='SAME')
 
 	flat_layer = flatten_tf_array(layer42_pool)
-	layer5_fccd = tf.matmul(flat_layer, variables['w4']) + variables['b4']
+	layer5_fccd = tf.matmul(flat_layer, variables['w5']) + variables['b5']
 	
 	return layer5_fccd
 
@@ -222,7 +223,7 @@ with tf.Session(graph = graph) as session:
 
     ## uncomment this to save model
 	#save_model = saver.save(session, CURRENT_PATH + SAVE_PATH)
-	print("Model saved in path: %s" % save_model)
+	print("Model saved.")
 
 
 
