@@ -213,7 +213,7 @@ with tf.Session(graph = graph) as session:
 
     ## uncomment this to save model
 	#save_model = saver.save(session, CURRENT_PATH + SAVE_PATH)
-	print("Model saved in path: %s" % save_model)
+	print("Model saved!")
 
 
 
