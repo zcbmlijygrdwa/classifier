@@ -1,0 +1,2 @@
+model_checkpoint_path: "D:\\Yitian\\XiaoYangZong/tmp/model.ckpt"
+all_model_checkpoint_paths: "D:\\Yitian\\XiaoYangZong/tmp/model.ckpt"
