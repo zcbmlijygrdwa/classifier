@@ -35,7 +35,7 @@ layer 5: output layer
 '''
 LABELS = 10
 BATCH_SIZE = 100
-EPOCH = 50
+EPOCH = 10
 FILTER_SIZE_1 = 7
 FILTER_SIZE_2 = 3
 FILTER_SIZE_31 = 3
@@ -211,7 +211,8 @@ with tf.Session(graph = graph) as session:
 		print('\n')
 		print(epoch_summary)
 
-	save_model = saver.save(session, CURRENT_PATH + SAVE_PATH)
+    ## uncomment this to save model
+	#save_model = saver.save(session, CURRENT_PATH + SAVE_PATH)
 	print("Model saved in path: %s" % save_model)
 
 

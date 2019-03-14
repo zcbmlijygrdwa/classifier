@@ -63,8 +63,8 @@ tf_test_dataset = tf.constant(test_dataset, tf.float32)
 
 
 with tf.Session() as session:
-    #saver = tf.train.import_meta_graph(CURRENT_PATH + SAVE_PATH + '.meta')
-    #saver.restore(session, CURRENT_PATH + SAVE_PATH)
+    saver = tf.train.import_meta_graph(CURRENT_PATH + SAVE_PATH + '.meta')
+    saver.restore(session, CURRENT_PATH + SAVE_PATH)
     print('load saved model successfully')
     graph = tf.get_default_graph()
     input_x = graph.get_tensor_by_name("input_x:0")
